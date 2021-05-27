@@ -9,11 +9,11 @@ const app = express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log("Server started on port 3000");
 });
 
-mongoose.connect("mongodb://localhost:27017/toDoListDB",{useNewUrlParser:true});
+mongoose.connect("mongodb+srv://admin-Rahul:RahulPRO2015@cluster0.iqtk2.mongodb.net/toDoListDB",{useNewUrlParser:true});
 
 //items collection
 const itemSchema = new mongoose.Schema({
