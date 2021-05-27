@@ -44,7 +44,7 @@ const List  = new mongoose.model("List",listSchema);
 
 
 app.get("/", function(req, res) {
-  // Retrieving Data From Database
+  // Retrieving Data From DATABASE
   Item.find(function(err,dbData){
     if(dbData.length==0){ // When DB is Empty add default items in items collection
       Item.insertMany(defaultItems,function(err){
